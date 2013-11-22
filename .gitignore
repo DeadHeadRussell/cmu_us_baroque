@@ -1,9 +1,6 @@
 ccoefs
 cep
-cg_tmp_18182.npow
-cg_tmp_9779.f0
-cg_tmp_9779.mcep
-cg_tmp_9779.v
+cg_tmp_*
 dur.dur.S25.out
 ehmm
 emu
@@ -29,12 +26,7 @@ prompt-wav
 recording
 scratch
 sptk_f0
-sptkf0_tmp.19237.minmax
-sptkf0_tmp.19237.raw
-sptkf0_tmp.19237.sf
-sptkf0_tmp.19373.minmax
-sptkf0_tmp.19373.raw
-sptkf0_tmp.19373.sf
+sptkf0_tmp.*
 syl
 test
 tmp.txt

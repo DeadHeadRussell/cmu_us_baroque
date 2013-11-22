@@ -104,6 +104,7 @@ then
    PROMPTFILE=$1
 fi
 
+mkdir -p f0
 cat $PROMPTFILE |
 awk '{print $2}' |
 while read i
