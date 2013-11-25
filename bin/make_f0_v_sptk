@@ -104,6 +104,7 @@ then
    PROMPTFILE=$1
 fi
 
+mkdir -p f0
 cat $PROMPTFILE |
 awk '{print $2}' |
 while read i
@@ -136,7 +137,9 @@ do
 	    $X2X +fa | \
 	    awk '{if ($1 > 0.0) print $1,1;  else print 0,0}'  | \
 	    $ESTDIR/bin/ch_track -itype ascii -otype est_binary -s 0.005 -o sptk_f0/$fname.f0
-	$FESTVOXDIR/src/general/smooth_f0 -o f0/$fname.f0 sptk_f0/$fname.f0 -otype ssff -lab lab/$fname.lab -silences $SILENCE -interpolate -postsmooth -postwindow 0.025
+	# Remove smoothing since we are synthesizing muzac.
+#	$FESTVOXDIR/src/general/smooth_f0 -o f0/$fname.f0 sptk_f0/$fname.f0 -otype ssff -lab lab/$fname.lab -silences $SILENCE -interpolate -postsmooth -postwindow 0.025
+	cp sptk_f0/$fname.f0 f0/$fname.f0
 	$ESTDIR/bin/ch_track sptk_f0/$fname.f0 | awk '{print $2}' > v/$fname.v
 	
     else
